@@ -1,4 +1,9 @@
 import streamlit as st
+st.set_page_config(
+    page_title="AI Resume Screener",
+    page_icon="📄",
+    layout="wide"
+)
 import io
 import json
 from pypdf import PdfReader
