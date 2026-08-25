@@ -168,14 +168,17 @@ JOB DESCRIPTION:
 """
 
             # ----------------------------------
+                        # ----------------------------------
             # CALL GEMINI
             # ----------------------------------
-        response = client.models.generate_content(
-    model="gemini-3-flash-preview",
-    contents=prompt
-)
 
-        response_text = response.text.strip()
+            response = client.models.generate_content(
+                model="gemini-3-flash-preview",
+                contents=prompt
+            )
+
+            response_text = response.text.strip()
+
             # ----------------------------------
             # CLEAN JSON RESPONSE
             # ----------------------------------
@@ -191,7 +194,6 @@ JOB DESCRIPTION:
 
             analysis = json.loads(response_text)
 
-        # ======================================
         # DISPLAY RESULTS
         # ======================================
 
