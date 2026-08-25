@@ -170,12 +170,12 @@ JOB DESCRIPTION:
             # ----------------------------------
             # CALL GEMINI
             # ----------------------------------
-response = client.models.generate_content(
+        response = client.models.generate_content(
     model="gemini-3-flash-preview",
     contents=prompt
 )
 
-response_text = response.text.strip()
+        response_text = response.text.strip()
             # ----------------------------------
             # CLEAN JSON RESPONSE
             # ----------------------------------
