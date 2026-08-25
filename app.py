@@ -171,23 +171,12 @@ JOB DESCRIPTION:
             # CALL GEMINI
             # ----------------------------------
 
-                        try:
-                response = client.models.generate_content(
-                    model="gemini-3-flash-preview",
-                    contents=prompt
-                )
+        response = client.models.generate_content(
+    model="gemini-3-flash-preview",
+    contents=prompt
+)
 
-                response_text = response.text.strip()
-
-            except Exception as e:
-                if "503" in str(e):
-                    st.error(
-                        "⚠️ Gemini is temporarily busy. "
-                        "Please wait a moment and try again."
-                    )
-                    st.stop()
-                else:
-                    raise
+        response_text = response.text.strip()
 
             # ----------------------------------
             # CLEAN JSON RESPONSE
