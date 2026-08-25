@@ -6,6 +6,7 @@ st.set_page_config(
 )
 import io
 import json
+import time
 from pypdf import PdfReader
 from google import genai
 
@@ -170,10 +171,21 @@ JOB DESCRIPTION:
             # CALL GEMINI
             # ----------------------------------
 
-            response = client.models.generate_content(
-                model="gemini-3-flash-preview",
-                contents=prompt
-            )
+            max_retries = 3
+
+for attempt in range(max_retries):
+    try:
+        response = client.models.generate_content(
+            model="gemini-3-flash-preview",
+            contents=prompt
+        )
+        break
+
+    except Exception as e:
+        if "503" in str(e) and attempt < max_retries - 1:
+            time.sleep(2 ** attempt)
+        else:
+            raise
 
             response_text = response.text.strip()
 
