@@ -171,21 +171,10 @@ JOB DESCRIPTION:
             # CALL GEMINI
             # ----------------------------------
 
-                        max_retries = 3
-
-            for attempt in range(max_retries):
-                try:
-                    response = client.models.generate_content(
-                        model="gemini-3-flash-preview",
-                        contents=prompt
-                    )
-                    break
-
-                except Exception as e:
-                    if "503" in str(e) and attempt < max_retries - 1:
-                        time.sleep(2 ** attempt)
-                    else:
-                        raise
+                        response = client.models.generate_content(
+    model="gemini-3-flash-preview",
+    contents=prompt
+            )
 
             response_text = response.text.strip()
 
