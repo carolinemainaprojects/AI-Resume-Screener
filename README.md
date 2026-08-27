@@ -4,7 +4,7 @@ An AI-powered resume screening application that analyzes PDF resumes against job
 
 ## 🚀 Overview
 
-The AI Resume Screener helps simplify the initial stage of candidate evaluation.
+The **AI Resume Screener** helps simplify the initial stage of candidate evaluation.
 
 A user uploads a PDF resume and provides a job title and job description. The application extracts the resume text and uses **Google Gemini** to analyze the candidate's suitability for the role.
 
@@ -17,7 +17,7 @@ PDF Resume
     ↓
 Upload Resume
     ↓
-Extract Text
+Extract Resume Text
     ↓
 Google Gemini
     ↓
@@ -36,7 +36,7 @@ AI Evaluation
 ## ✨ Features
 
 * 📄 PDF resume upload
-* 🔍 Resume text extraction
+* 🔍 Automatic resume text extraction
 * 🤖 AI-powered candidate evaluation
 * 📊 Resume scoring
 * 🎯 Job-match assessment
@@ -48,7 +48,7 @@ AI Evaluation
 
 ## 🧪 Example Result
 
-The application can produce results such as:
+A resume evaluation can produce results such as:
 
 ```text
 Resume Score: 92/100
@@ -73,18 +73,20 @@ The scores and recommendations are generated dynamically based on the uploaded r
 
 ## 🛠️ Tech Stack
 
-* **Python** — application logic
-* **Streamlit** — web application interface
-* **Google Gemini API** — AI-powered resume analysis
-* **PyPDF** — PDF text extraction
-* **python-dotenv** — environment configuration
-* **GitHub** — version control and project hosting
+| Technology    | Purpose                    |
+| ------------- | -------------------------- |
+| Python        | Application logic          |
+| Streamlit     | Web application interface  |
+| Google Gemini | AI-powered resume analysis |
+| PyPDF         | PDF text extraction        |
+| python-dotenv | Environment configuration  |
+| GitHub        | Version control            |
 
 ## 🔐 Security
 
-API credentials are stored securely using environment variables / Streamlit secrets and are not included directly in the source code.
+API credentials are stored securely using environment variables or Streamlit secrets and are not included directly in the source code.
 
-The `.gitignore` file is used to prevent sensitive files such as local environment variables from being committed to the repository.
+The `.gitignore` file helps prevent sensitive configuration files from being committed to the repository.
 
 ## 📁 Project Structure
 
@@ -113,7 +115,7 @@ pip install -r requirements.txt
 
 ### 3. Configure your Gemini API key
 
-Create the appropriate environment/secrets configuration and add your Gemini API key.
+Add your Gemini API key using the appropriate environment variable or Streamlit secrets configuration.
 
 ### 4. Run the application
 
@@ -127,7 +129,7 @@ Recruiters and hiring teams can receive a large number of applications for a sin
 
 This project demonstrates how Generative AI can assist with the initial screening process by quickly comparing candidate resumes with job requirements and highlighting relevant information.
 
-The system is designed to **assist human decision-making**, rather than replace it.
+The system is designed to **assist human decision-making rather than replace it**.
 
 ## 🔮 Future Improvements
 
@@ -143,13 +145,13 @@ The system is designed to **assist human decision-making**, rather than replace 
 
 ## 🌐 Live Demo
 
-**Streamlit App:** Add the deployed application link here.
+👉 **[AI Resume Screener — Live Demo](https://ai-resume-screener-dhhsbmjhkddjpz6tmjery3.streamlit.app/)**
 
 ## 👩🏽‍💻 Author
 
-**Caroline Maina**
+### Caroline Maina
 
-AI Automation & Generative AI
+**AI Automation & Generative AI**
 
 **GitHub:** [@carolinemainaprojects](https://github.com/carolinemainaprojects)
 
@@ -157,5 +159,4 @@ AI Automation & Generative AI
 
 ---
 
-⭐ If you find this project interesting, feel free to explore the repository and other projects on my profile.
-
+⭐ Explore my other AI automation projects on my GitHub profile.
