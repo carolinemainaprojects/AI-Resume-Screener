@@ -71,7 +71,9 @@ Areas for Improvement:
 
 The scores and recommendations are generated dynamically based on the uploaded resume and job description.
 ## 📸 Application Screenshot
+## 📸 Application Screenshot
 
+![AI Resume Screener](Screenshot_2026-08-30-00-00-54-12_40deb401b9ffe8e1df2f1cc5ba480b12.jpg)
 ![AI Resume Screener](resume-screener.png)
 ## 🛠️ Tech Stack
 
