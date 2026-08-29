@@ -70,8 +70,6 @@ Areas for Improvement:
 ```
 
 The scores and recommendations are generated dynamically based on the uploaded resume and job description.
-## 📸 Application Screenshot
-## 📸 Application Screenshot
 
 ## 📸 Application Screenshot
 
