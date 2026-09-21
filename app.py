@@ -171,7 +171,7 @@ JOB DESCRIPTION:
 # CALL GEMINI WITH RETRY + FALLBACK
 # ----------------------------------
 
-import time
+
 
 models_to_try = [
     "gemini-3.6-flash",
