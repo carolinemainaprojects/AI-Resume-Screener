@@ -167,39 +167,16 @@ JOB DESCRIPTION:
 {job_description}
 """
 
-            # ----------------------------------
-# CALL GEMINI WITH RETRY + FALLBACK
+# ----------------------------------
+# CALL GEMINI
 # ----------------------------------
 
+response = client.models.generate_content(
+    model="gemini-3.6-flash",
+    contents=prompt
+)
 
-
-models_to_try = [
-    "gemini-3.6-flash",
-    "gemini-2.5-flash"
-]
-
-response = None
-
-for attempt in range(3):
-    try:
-        response = client.models.generate_content(
-            model="gemini-3.6-flash",
-            contents=prompt
-        )
-
-        response_text = response.text.strip()
-        break
-
-    except Exception as e:
-        if "503" in str(e) or "UNAVAILABLE" in str(e):
-            time.sleep(2 ** attempt)
-        else:
-            raise
-
-if response is None:
-    raise Exception(
-        "Gemini is temporarily unavailable. Please try again in a few minutes."
-    )
+response_text = response.text.strip()
             # ----------------------------------
             # CLEAN JSON RESPONSE
             # ----------------------------------
