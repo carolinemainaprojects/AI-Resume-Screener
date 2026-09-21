@@ -179,38 +179,26 @@ models_to_try = [
 ]
 
 response = None
-last_error = None
 
-for model_name in models_to_try:
-    for attempt in range(3):
-        try:
-            response = client.models.generate_content(
-                model=model_name,
-                contents=prompt
-            )
+for attempt in range(3):
+    try:
+        response = client.models.generate_content(
+            model="gemini-3.6-flash",
+            contents=prompt
+        )
 
-            response_text = response.text.strip()
-            break
-
-        except Exception as e:
-            last_error = e
-
-            # Retry temporary server errors
-            if "503" in str(e) or "UNAVAILABLE" in str(e):
-                wait_time = 2 ** attempt
-                time.sleep(wait_time)
-                continue
-
-            # For other errors, don't keep retrying
-            break
-
-    if response is not None:
+        response_text = response.text.strip()
         break
+
+    except Exception as e:
+        if "503" in str(e) or "UNAVAILABLE" in str(e):
+            time.sleep(2 ** attempt)
+        else:
+            raise
 
 if response is None:
     raise Exception(
-        f"Gemini is temporarily unavailable. "
-        f"Please try again in a few minutes. Error: {last_error}"
+        "Gemini is temporarily unavailable. Please try again in a few minutes."
     )
             # ----------------------------------
             # CLEAN JSON RESPONSE
