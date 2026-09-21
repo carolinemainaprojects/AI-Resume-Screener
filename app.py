@@ -167,16 +167,18 @@ JOB DESCRIPTION:
 {job_description}
 """
 
-# ----------------------------------
-# CALL GEMINI
-# ----------------------------------
+            # ----------------------------------
+                        # ----------------------------------
+            # CALL GEMINI
+            # ----------------------------------
 
-response = client.models.generate_content(
-    model="gemini-3.6-flash",
-    contents=prompt
-)
+            response = client.models.generate_content(
+                model="gemini-3.6-flash",
+                contents=prompt
+            )
 
-response_text = response.text.strip()
+            response_text = response.text.strip()
+
             # ----------------------------------
             # CLEAN JSON RESPONSE
             # ----------------------------------
